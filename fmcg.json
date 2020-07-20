@@ -1,1 +1,855 @@
-{"swagger":"2.0","info":{"description":"RUPI CASH FMCG SWAGGER","title":"RUPI FMCG REST API"},"host":"apicashdev.rupi.id","basePath":"/","tags":[{"name":"banner-controller","description":"Function for show banner"},{"name":"callback-controller","description":"Function for Callback"},{"name":"history-controller","description":"Function for History"},{"name":"home-controller","description":"Home Controller"},{"name":"product-controller","description":"Function for show product"},{"name":"store-controller","description":"Function for show store"},{"name":"transaction-controller","description":"Function for Ordering"},{"name":"user-controller","description":"Function for User"}],"paths":{"/fmcg/api/banner/getbanner":{"post":{"tags":["banner-controller"],"summary":"getBanner","operationId":"getBannerUsingPOST","consumes":["application/json"],"produces":["*/*"],"parameters":[{"name":"access-token","in":"header","description":"access-token","required":true,"type":"string"}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/GeneralResponse"}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}}}},"/fmcg/api/history/trans":{"post":{"tags":["history-controller"],"summary":"histtoryTransaction","operationId":"histtoryTransactionUsingPOST","consumes":["application/json"],"produces":["*/*"],"parameters":[{"name":"access-token","in":"header","description":"access-token","required":true,"type":"string"},{"in":"body","name":"param","description":"param","required":true,"schema":{"$ref":"#/definitions/HistoryPayload"}}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/GeneralResponse"}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}}}},"/fmcg/api/home":{"get":{"tags":["home-controller"],"summary":"homeSweetHome","operationId":"homeSweetHomeUsingGET","produces":["*/*"],"responses":{"200":{"description":"OK","schema":{"type":"string"}},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}}}},"/fmcg/api/product/getstoreproduct":{"post":{"tags":["product-controller"],"summary":"getStoreProduct","operationId":"getStoreProductUsingPOST","consumes":["application/json"],"produces":["*/*"],"parameters":[{"name":"access-token","in":"header","description":"access-token","required":true,"type":"string"},{"in":"body","name":"param","description":"param","required":true,"schema":{"$ref":"#/definitions/GetStoreProductPayload"}}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/GeneralResponse"}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}}}},"/fmcg/api/store":{"post":{"tags":["store-controller"],"summary":"storeList","operationId":"storeListUsingPOST","consumes":["application/json"],"produces":["*/*"],"parameters":[{"name":"access-token","in":"header","description":"access-token","required":true,"type":"string"},{"in":"body","name":"param","description":"param","required":true,"schema":{"$ref":"#/definitions/StoreListPayload"}}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/GetStoreListOutResponse"}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}}}},"/fmcg/api/transaction/canceluser":{"post":{"tags":["transaction-controller"],"summary":"transactionCancel","operationId":"transactionCancelUsingPOST","consumes":["application/json"],"produces":["*/*"],"parameters":[{"name":"access-token","in":"header","description":"access-token","required":true,"type":"string"},{"in":"body","name":"param","description":"param","required":true,"schema":{"$ref":"#/definitions/TransactionCancelPayload"}}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/GeneralResponse"}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}}}},"/fmcg/api/transaction/inq":{"post":{"tags":["transaction-controller"],"summary":"transactionInq","operationId":"transactionInqUsingPOST","consumes":["application/json"],"produces":["*/*"],"parameters":[{"name":"access-token","in":"header","description":"access-token","required":true,"type":"string"},{"in":"body","name":"param","description":"param","required":true,"schema":{"$ref":"#/definitions/TransactionPayload"}}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/GeneralResponse"}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}}}},"/fmcg/api/transaction/order":{"post":{"tags":["transaction-controller"],"summary":"transactionOrder","operationId":"transactionOrderUsingPOST","consumes":["application/json"],"produces":["*/*"],"parameters":[{"name":"access-token","in":"header","description":"access-token","required":true,"type":"string"},{"in":"body","name":"param","description":"param","required":true,"schema":{"$ref":"#/definitions/TransactionPayload"}}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/GeneralResponse"}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}}}},"/fmcg/api/user/getsavedlocation":{"post":{"tags":["user-controller"],"summary":"savedLocationList","operationId":"savedLocationListUsingPOST","consumes":["application/json"],"produces":["*/*"],"parameters":[{"name":"access-token","in":"header","description":"access-token","required":true,"type":"string"}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/GeneralResponse"}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}}}},"/fmcg/api/user/savelocation":{"post":{"tags":["user-controller"],"summary":"saveLocation","operationId":"saveLocationUsingPOST","consumes":["application/json"],"produces":["*/*"],"parameters":[{"name":"access-token","in":"header","description":"access-token","required":true,"type":"string"},{"in":"body","name":"param","description":"param","required":true,"schema":{"$ref":"#/definitions/UserSaveLocationPayload"}}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/GeneralResponse"}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}}}},"/fmcg/callback/acceptorder":{"post":{"tags":["callback-controller"],"summary":"callbackAcceptOrder","operationId":"callbackAcceptOrderUsingPOST","consumes":["application/json"],"produces":["*/*"],"parameters":[{"name":"user","in":"header","description":"user","required":true,"type":"string"},{"name":"pass","in":"header","description":"pass","required":true,"type":"string"},{"in":"body","name":"param","description":"param","required":true,"schema":{"$ref":"#/definitions/CallbackAcceptOrderPayload"}}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/GeneralResponse"}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}}}}},"definitions":{"CallbackAcceptOrderPayload":{"type":"object","properties":{"driver_id":{"type":"string","description":"driver_id","allowEmptyValue":false},"refno":{"type":"string","description":"refno","allowEmptyValue":false}},"title":"CallbackAcceptOrderPayload","description":"CallbackAcceptOrder Payload"},"GeneralResponse":{"type":"object","properties":{"data":{"type":"object","description":"Whatever returned goes in here","allowEmptyValue":false},"message":{"type":"string","description":"OK","allowEmptyValue":false},"status":{"type":"string","description":"Status of process","allowEmptyValue":false}},"title":"GeneralResponse","description":"Respon for most of API "},"GetStoreListOutResponse":{"type":"object","properties":{"data":{"type":"object","description":"Whatever returned goes in here","allowEmptyValue":false},"message":{"type":"string","description":"OK","allowEmptyValue":false},"saved_location":{"type":"array","description":"List saved location","allowEmptyValue":false,"items":{"$ref":"#/definitions/UserSavedLocation"}},"status":{"type":"string","description":"Status of process","allowEmptyValue":false}},"title":"GetStoreListOutResponse","description":"Respon for most of API "},"GetStoreProductPayload":{"type":"object","properties":{"store_id":{"type":"string","description":"store_id","allowEmptyValue":false}},"title":"GetStoreProductPayload","description":"Get Store Product Payload"},"HistoryPayload":{"type":"object","properties":{"page":{"type":"string","description":"page","allowEmptyValue":false}},"title":"HistoryPayload","description":"History Payload"},"OrderPayload":{"type":"object","properties":{"product_id":{"type":"integer","format":"int64","description":"Product ID","allowEmptyValue":false},"quantity":{"type":"integer","format":"int32","description":"quantity","allowEmptyValue":false}},"title":"OrderPayload","description":"Order"},"StoreListPayload":{"type":"object","properties":{"filter":{"type":"string","description":"filter","allowEmptyValue":false},"latitude":{"type":"string","description":"latitude","allowEmptyValue":false},"longitude":{"type":"string","description":"longitude","allowEmptyValue":false},"page":{"type":"string","description":"page","allowEmptyValue":false},"sort":{"type":"string","description":"sort","allowEmptyValue":false}},"title":"StoreListPayload","description":"StoreList Payload"},"TransactionCancelPayload":{"type":"object","properties":{"refno":{"type":"string","description":"refno","allowEmptyValue":false}},"title":"TransactionCancelPayload","description":"TransactionCancel Payload"},"TransactionPayload":{"type":"object","properties":{"discount_code":{"type":"string","description":"discount_code","allowEmptyValue":false},"latitude":{"type":"string","description":"latitude","allowEmptyValue":false},"longitude":{"type":"string","description":"longitude","allowEmptyValue":false},"order":{"type":"array","description":"order","allowEmptyValue":false,"items":{"$ref":"#/definitions/OrderPayload"}},"payment_method":{"type":"string","description":"payment_method (angka)","allowEmptyValue":false}},"title":"TransactionPayload","description":"Transaction Payload"},"UserSaveLocationPayload":{"type":"object","properties":{"latitude":{"type":"string","description":"latitude","allowEmptyValue":false},"longitude":{"type":"string","description":"longitude","allowEmptyValue":false},"name":{"type":"string","description":"name","allowEmptyValue":false},"note":{"type":"string","description":"note","allowEmptyValue":false}},"title":"UserSaveLocationPayload"},"UserSavedLocation":{"type":"object","properties":{"created_by":{"type":"string"},"created_date":{"type":"string","format":"date-time"},"deleted":{"type":"boolean"},"id":{"type":"integer","format":"int64"},"latitude":{"type":"string"},"longitude":{"type":"string"},"name":{"type":"string"},"note":{"type":"string"},"updated_by":{"type":"string"},"updated_date":{"type":"string","format":"date-time"},"user_id":{"type":"integer","format":"int64"}},"title":"UserSavedLocation"}}}
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "RUPI CASH FMCG SWAGGER",
+    "title": "RUPI FMCG REST API"
+  },
+  "host": "apicashdev.rupi.id",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "banner-controller",
+      "description": "Function for show banner"
+    },
+    {
+      "name": "callback-controller",
+      "description": "Function for Callback"
+    },
+    {
+      "name": "history-controller",
+      "description": "Function for History"
+    },
+    {
+      "name": "home-controller",
+      "description": "Home Controller"
+    },
+    {
+      "name": "product-controller",
+      "description": "Function for show product"
+    },
+    {
+      "name": "store-controller",
+      "description": "Function for show store"
+    },
+    {
+      "name": "transaction-controller",
+      "description": "Function for Ordering"
+    },
+    {
+      "name": "user-controller",
+      "description": "Function for User"
+    }
+  ],
+  "paths": {
+    "/fmcg/api/banner/getbanner": {
+      "post": {
+        "tags": [
+          "banner-controller"
+        ],
+        "summary": "getBanner",
+        "operationId": "getBannerUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/fmcg/api/history/trans": {
+      "post": {
+        "tags": [
+          "history-controller"
+        ],
+        "summary": "histtoryTransaction",
+        "operationId": "histtoryTransactionUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/HistoryPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/fmcg/api/home": {
+      "get": {
+        "tags": [
+          "home-controller"
+        ],
+        "summary": "homeSweetHome",
+        "operationId": "homeSweetHomeUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/fmcg/api/product/getstoreproduct": {
+      "post": {
+        "tags": [
+          "product-controller"
+        ],
+        "summary": "getStoreProduct",
+        "operationId": "getStoreProductUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GetStoreProductPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/fmcg/api/store": {
+      "post": {
+        "tags": [
+          "store-controller"
+        ],
+        "summary": "storeList",
+        "operationId": "storeListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StoreListPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GetStoreListOutResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/fmcg/api/transaction/canceluser": {
+      "post": {
+        "tags": [
+          "transaction-controller"
+        ],
+        "summary": "transactionCancel",
+        "operationId": "transactionCancelUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TransactionCancelPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/fmcg/api/transaction/inq": {
+      "post": {
+        "tags": [
+          "transaction-controller"
+        ],
+        "summary": "transactionInq",
+        "operationId": "transactionInqUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TransactionPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/fmcg/api/transaction/order": {
+      "post": {
+        "tags": [
+          "transaction-controller"
+        ],
+        "summary": "transactionOrder",
+        "operationId": "transactionOrderUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TransactionPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/fmcg/api/user/getsavedlocation": {
+      "post": {
+        "tags": [
+          "user-controller"
+        ],
+        "summary": "savedLocationList",
+        "operationId": "savedLocationListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/fmcg/api/user/savelocation": {
+      "post": {
+        "tags": [
+          "user-controller"
+        ],
+        "summary": "saveLocation",
+        "operationId": "saveLocationUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserSaveLocationPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/fmcg/callback/acceptorder": {
+      "post": {
+        "tags": [
+          "callback-controller"
+        ],
+        "summary": "callbackAcceptOrder",
+        "operationId": "callbackAcceptOrderUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "user",
+            "in": "header",
+            "description": "user",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "pass",
+            "in": "header",
+            "description": "pass",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CallbackAcceptOrderPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CallbackAcceptOrderPayload": {
+      "type": "object",
+      "properties": {
+        "driver_id": {
+          "type": "string",
+          "description": "driver_id",
+          "allowEmptyValue": false
+        },
+        "refno": {
+          "type": "string",
+          "description": "refno",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "CallbackAcceptOrderPayload",
+      "description": "CallbackAcceptOrder Payload"
+    },
+    "GeneralResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object",
+          "description": "Whatever returned goes in here",
+          "allowEmptyValue": false
+        },
+        "message": {
+          "type": "string",
+          "description": "OK",
+          "allowEmptyValue": false
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of process",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "GeneralResponse",
+      "description": "Respon for most of API "
+    },
+    "GetStoreListOutResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object",
+          "description": "Whatever returned goes in here",
+          "allowEmptyValue": false
+        },
+        "message": {
+          "type": "string",
+          "description": "OK",
+          "allowEmptyValue": false
+        },
+        "saved_location": {
+          "type": "array",
+          "description": "List saved location",
+          "allowEmptyValue": false,
+          "items": {
+            "$ref": "#/definitions/UserSavedLocation"
+          }
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of process",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "GetStoreListOutResponse",
+      "description": "Respon for most of API "
+    },
+    "GetStoreProductPayload": {
+      "type": "object",
+      "properties": {
+        "store_id": {
+          "type": "string",
+          "description": "store_id",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "GetStoreProductPayload",
+      "description": "Get Store Product Payload"
+    },
+    "HistoryPayload": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "string",
+          "description": "page",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "HistoryPayload",
+      "description": "History Payload"
+    },
+    "OrderPayload": {
+      "type": "object",
+      "properties": {
+        "product_id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Product ID",
+          "allowEmptyValue": false
+        },
+        "quantity": {
+          "type": "integer",
+          "format": "int32",
+          "description": "quantity",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "OrderPayload",
+      "description": "Order"
+    },
+    "StoreListPayload": {
+      "type": "object",
+      "properties": {
+        "filter": {
+          "type": "string",
+          "description": "filter",
+          "allowEmptyValue": false
+        },
+        "latitude": {
+          "type": "string",
+          "description": "latitude",
+          "allowEmptyValue": false
+        },
+        "longitude": {
+          "type": "string",
+          "description": "longitude",
+          "allowEmptyValue": false
+        },
+        "page": {
+          "type": "string",
+          "description": "page",
+          "allowEmptyValue": false
+        },
+        "sort": {
+          "type": "string",
+          "description": "sort",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "StoreListPayload",
+      "description": "StoreList Payload"
+    },
+    "TransactionCancelPayload": {
+      "type": "object",
+      "properties": {
+        "refno": {
+          "type": "string",
+          "description": "refno",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "TransactionCancelPayload",
+      "description": "TransactionCancel Payload"
+    },
+    "TransactionPayload": {
+      "type": "object",
+      "properties": {
+        "discount_code": {
+          "type": "string",
+          "description": "discount_code",
+          "allowEmptyValue": false
+        },
+        "latitude": {
+          "type": "string",
+          "description": "latitude",
+          "allowEmptyValue": false
+        },
+        "longitude": {
+          "type": "string",
+          "description": "longitude",
+          "allowEmptyValue": false
+        },
+        "order": {
+          "type": "array",
+          "description": "order",
+          "allowEmptyValue": false,
+          "items": {
+            "$ref": "#/definitions/OrderPayload"
+          }
+        },
+        "payment_method": {
+          "type": "string",
+          "description": "payment_method (angka)",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "TransactionPayload",
+      "description": "Transaction Payload"
+    },
+    "UserSaveLocationPayload": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "string",
+          "description": "latitude",
+          "allowEmptyValue": false
+        },
+        "longitude": {
+          "type": "string",
+          "description": "longitude",
+          "allowEmptyValue": false
+        },
+        "name": {
+          "type": "string",
+          "description": "name",
+          "allowEmptyValue": false
+        },
+        "note": {
+          "type": "string",
+          "description": "note",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "UserSaveLocationPayload"
+    },
+    "UserSavedLocation": {
+      "type": "object",
+      "properties": {
+        "created_by": {
+          "type": "string"
+        },
+        "created_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "deleted": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "latitude": {
+          "type": "string"
+        },
+        "longitude": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "updated_by": {
+          "type": "string"
+        },
+        "updated_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "user_id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "UserSavedLocation"
+    }
+  }
+}
