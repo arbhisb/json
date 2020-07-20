@@ -1,0 +1,3224 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "RUPI CASH SWAGGER",
+    "title": "RUPI REST API",
+    "version": "1.0.5"
+  },
+  "host": "localhost:5005",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "banner-controller",
+      "description": "Function for show banner"
+    },
+    {
+      "name": "file-controller",
+      "description": "Operations pertaining to file in File Management System"
+    },
+    {
+      "name": "history-controller",
+      "description": "Function for show history"
+    },
+    {
+      "name": "ppob-controller",
+      "description": "Function for PPOB Transaction"
+    },
+    {
+      "name": "product-controller",
+      "description": "Function for show product"
+    },
+    {
+      "name": "syarat-privasi-controller",
+      "description": "Function for show Term Condition"
+    },
+    {
+      "name": "telco-controller",
+      "description": "Function for Telco Transaction"
+    },
+    {
+      "name": "user-login-controller",
+      "description": "Function for user to login"
+    }
+  ],
+  "paths": {
+    "/api/banner/getByUserType": {
+      "post": {
+        "tags": [
+          "banner-controller"
+        ],
+        "summary": "getByUserType",
+        "operationId": "getByUserTypeUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BannerByUserTypePayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/cekcloseaccount": {
+      "post": {
+        "tags": [
+          "user-login-controller"
+        ],
+        "summary": "cekcloseaccount",
+        "operationId": "cekcloseaccountUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/cekpin": {
+      "post": {
+        "tags": [
+          "user-login-controller"
+        ],
+        "summary": "cekpin",
+        "operationId": "cekpinUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LoginPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/closeaccount": {
+      "post": {
+        "tags": [
+          "user-login-controller"
+        ],
+        "summary": "closeAccount",
+        "operationId": "closeAccountUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CloseAccountPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/getAccountInfo": {
+      "post": {
+        "tags": [
+          "user-login-controller"
+        ],
+        "summary": "getAccountInfo",
+        "operationId": "getAccountInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AccountIdPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/JSONObject"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/getBalanceInfo": {
+      "post": {
+        "tags": [
+          "user-login-controller"
+        ],
+        "summary": "getBalanceInfo",
+        "operationId": "getBalanceInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BalanceInfoResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/getLogin": {
+      "post": {
+        "tags": [
+          "user-login-controller"
+        ],
+        "summary": "getLogin",
+        "operationId": "getLoginUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LoginPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LoginResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/getUserAccount": {
+      "post": {
+        "tags": [
+          "user-login-controller"
+        ],
+        "summary": "getUserAccount",
+        "operationId": "getUserAccountUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GetUserAccountResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/getVerified": {
+      "post": {
+        "tags": [
+          "user-login-controller"
+        ],
+        "summary": "getVerified",
+        "operationId": "getVerifiedUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/VerifiedPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/history/payment": {
+      "post": {
+        "tags": [
+          "history-controller"
+        ],
+        "summary": "getDetailHistoryTagihan",
+        "operationId": "getDetailHistoryTagihanUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DetailHistoryPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/logout": {
+      "post": {
+        "tags": [
+          "user-login-controller"
+        ],
+        "summary": "logout",
+        "operationId": "logoutUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/lupaPassword": {
+      "post": {
+        "tags": [
+          "user-login-controller"
+        ],
+        "summary": "forgotPassword",
+        "operationId": "forgotPasswordUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ForgotPassword"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ForgotPasswordResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/multi/inquiry": {
+      "post": {
+        "tags": [
+          "ppob-controller"
+        ],
+        "summary": "MultiInquiry",
+        "operationId": "MultiInquiryUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PPOBInqPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PPOBInqResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/multi/payment": {
+      "post": {
+        "tags": [
+          "ppob-controller"
+        ],
+        "summary": "MultiPayment",
+        "operationId": "MultiPaymentUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PPOBPayPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PPOBPayResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/postDeviceToken": {
+      "post": {
+        "tags": [
+          "user-login-controller"
+        ],
+        "summary": "updateDeviceToken",
+        "operationId": "updateDeviceTokenUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateDeviceToken"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/product/paket-data": {
+      "post": {
+        "tags": [
+          "product-controller"
+        ],
+        "summary": "productData",
+        "operationId": "productDataUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProductPulsaDataPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/product/pulsa": {
+      "post": {
+        "tags": [
+          "product-controller"
+        ],
+        "summary": "productPulsa",
+        "operationId": "productPulsaUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProductPulsaDataPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/product/token-pln-gsp": {
+      "post": {
+        "tags": [
+          "product-controller"
+        ],
+        "summary": "productToken",
+        "operationId": "productTokenUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/register": {
+      "post": {
+        "tags": [
+          "user-login-controller"
+        ],
+        "summary": "getRegister",
+        "operationId": "getRegisterUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RegisterPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralErrorResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/resendotp": {
+      "post": {
+        "tags": [
+          "user-login-controller"
+        ],
+        "summary": "resendOTP",
+        "operationId": "resendOTPUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AccountIdPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/snk/all": {
+      "post": {
+        "tags": [
+          "syarat-privasi-controller"
+        ],
+        "summary": "getAll",
+        "operationId": "getAllUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SyaratPrivasiResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/snk/getTermByTypeArray": {
+      "post": {
+        "tags": [
+          "syarat-privasi-controller"
+        ],
+        "summary": "getTataCara",
+        "operationId": "getTataCaraUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TataCaraPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/snk/privasi": {
+      "post": {
+        "tags": [
+          "syarat-privasi-controller"
+        ],
+        "summary": "getKebijakanPrivasi",
+        "operationId": "getKebijakanPrivasiUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/snk/syaratKetentuan": {
+      "post": {
+        "tags": [
+          "syarat-privasi-controller"
+        ],
+        "summary": "getSyaratKetentuan",
+        "operationId": "getSyaratKetentuanUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/updatePassword": {
+      "post": {
+        "tags": [
+          "user-login-controller"
+        ],
+        "summary": "updatePassword",
+        "operationId": "updatePasswordUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdatePasswordPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/bpjs/inq": {
+      "post": {
+        "tags": [
+          "ppob-controller"
+        ],
+        "summary": "BPJSInquiry",
+        "operationId": "BPJSInquiryUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PPOBInqPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PPOBInqResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/bpjs/payment": {
+      "post": {
+        "tags": [
+          "ppob-controller"
+        ],
+        "summary": "BPJSPayment",
+        "operationId": "BPJSPaymentUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PPOBPayPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PPOBPayResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/data/payment": {
+      "post": {
+        "tags": [
+          "telco-controller"
+        ],
+        "summary": "DataPayment",
+        "operationId": "DataPaymentUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TelcoPayPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TelcoPayResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/finance/inq": {
+      "post": {
+        "tags": [
+          "ppob-controller"
+        ],
+        "summary": "FinanceInquiry",
+        "operationId": "FinanceInquiryUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PPOBInqPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PPOBInqResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/finance/payment": {
+      "post": {
+        "tags": [
+          "ppob-controller"
+        ],
+        "summary": "FinancePayment",
+        "operationId": "FinancePaymentUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PPOBPayPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PPOBPayResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/history/tagihan": {
+      "post": {
+        "tags": [
+          "history-controller"
+        ],
+        "summary": "getHistoryTagihan",
+        "operationId": "getHistoryTagihanUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/HistoryPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/history/telco": {
+      "post": {
+        "tags": [
+          "history-controller"
+        ],
+        "summary": "getHistoryTelco",
+        "operationId": "getHistoryTelcoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/HistoryPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/pasca/inq": {
+      "post": {
+        "tags": [
+          "ppob-controller"
+        ],
+        "summary": "PascaInquiry",
+        "operationId": "PascaInquiryUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PPOBInqPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PPOBInqResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/pasca/payment": {
+      "post": {
+        "tags": [
+          "ppob-controller"
+        ],
+        "summary": "PascaPayment",
+        "operationId": "PascaPaymentUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PPOBPayPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PPOBPayResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/pdam/inq": {
+      "post": {
+        "tags": [
+          "ppob-controller"
+        ],
+        "summary": "PDAMInquiry",
+        "operationId": "PDAMInquiryUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PPOBInqPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PPOBInqResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/pdam/payment": {
+      "post": {
+        "tags": [
+          "ppob-controller"
+        ],
+        "summary": "PDAMPayment",
+        "operationId": "PDAMPaymentUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PPOBPayPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PPOBPayResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/pln/inq": {
+      "post": {
+        "tags": [
+          "ppob-controller"
+        ],
+        "summary": "PLNInquiry",
+        "operationId": "PLNInquiryUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PPOBInqPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PPOBInqResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/pln/payment": {
+      "post": {
+        "tags": [
+          "ppob-controller"
+        ],
+        "summary": "PLNPayment",
+        "operationId": "PLNPaymentUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PPOBPayPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PPOBPayResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/product/bpjs": {
+      "post": {
+        "tags": [
+          "product-controller"
+        ],
+        "summary": "productBPJS",
+        "operationId": "productBPJSUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/product/multifinance": {
+      "post": {
+        "tags": [
+          "product-controller"
+        ],
+        "summary": "productMultiFinance",
+        "operationId": "productMultiFinanceUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/product/pascabayar": {
+      "post": {
+        "tags": [
+          "product-controller"
+        ],
+        "summary": "productPascaBayar",
+        "operationId": "productPascaBayarUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/product/pdam": {
+      "post": {
+        "tags": [
+          "product-controller"
+        ],
+        "summary": "productPDAM",
+        "operationId": "productPDAMUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/product/tv-kabel": {
+      "post": {
+        "tags": [
+          "product-controller"
+        ],
+        "summary": "productTVKabel",
+        "operationId": "productTVKabelUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/pulsa/payment": {
+      "post": {
+        "tags": [
+          "telco-controller"
+        ],
+        "summary": "PulsaPayment",
+        "operationId": "PulsaPaymentUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TelcoPayPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TelcoPayResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/telco/payment": {
+      "post": {
+        "tags": [
+          "telco-controller"
+        ],
+        "summary": "MultiPayment",
+        "operationId": "MultiPaymentUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TelcoPayPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TelcoPayResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/tv/inq": {
+      "post": {
+        "tags": [
+          "ppob-controller"
+        ],
+        "summary": "TVInquiry",
+        "operationId": "TVInquiryUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PPOBInqPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PPOBInqResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v2/tv/payment": {
+      "post": {
+        "tags": [
+          "ppob-controller"
+        ],
+        "summary": "TVPayment",
+        "operationId": "TVPaymentUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "access-token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PPOBPayPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PPOBPayResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/upload": {
+      "post": {
+        "tags": [
+          "file-controller"
+        ],
+        "summary": "uploadFile",
+        "operationId": "uploadFileUsingPOST",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "file",
+            "required": true,
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UploadFileResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/uploadimage": {
+      "post": {
+        "tags": [
+          "file-controller"
+        ],
+        "summary": "uploadImage",
+        "operationId": "uploadImageUsingPOST",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "photo",
+            "in": "formData",
+            "description": "photo",
+            "required": true,
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UploadFileResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/{folder}/{id}": {
+      "get": {
+        "tags": [
+          "file-controller"
+        ],
+        "summary": "getImage",
+        "operationId": "getImageUsingGET",
+        "produces": [
+          "image/jpeg"
+        ],
+        "parameters": [
+          {
+            "name": "folder",
+            "in": "path",
+            "description": "folder",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AccountIdPayload": {
+      "type": "object",
+      "properties": {
+        "accountid": {
+          "type": "string",
+          "description": "Account id",
+          "allowEmptyValue": false
+        },
+        "password": {
+          "type": "string",
+          "description": "Password / PIN",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "AccountIdPayload",
+      "description": "Account id"
+    },
+    "BalanceInfoResponse": {
+      "type": "object",
+      "properties": {
+        "currency": {
+          "type": "string",
+          "description": "balance currency",
+          "allowEmptyValue": false
+        },
+        "lastupdate": {
+          "type": "string",
+          "description": "last update",
+          "allowEmptyValue": false
+        },
+        "monthlydebit": {
+          "type": "number",
+          "format": "double",
+          "description": "Current top up in this month",
+          "allowEmptyValue": false
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of process",
+          "allowEmptyValue": false
+        },
+        "value": {
+          "type": "number",
+          "format": "double",
+          "description": "Value / balance",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "BalanceInfoResponse",
+      "description": "Respon for Balance / Saldo "
+    },
+    "BannerByUserTypePayload": {
+      "type": "object",
+      "properties": {
+        "user_type": {
+          "type": "string",
+          "description": "user_type / account_type",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "BannerByUserTypePayload",
+      "description": "BannerByUserTypePayload"
+    },
+    "CloseAccountPayload": {
+      "type": "object",
+      "properties": {
+        "account_name": {
+          "type": "string",
+          "description": "Bank account name",
+          "allowEmptyValue": false
+        },
+        "account_no": {
+          "type": "string",
+          "description": "Bank account number",
+          "allowEmptyValue": false
+        },
+        "alasan": {
+          "type": "string",
+          "description": "reason to close account",
+          "allowEmptyValue": false
+        },
+        "foto_ktp": {
+          "type": "string",
+          "description": "id picture",
+          "allowEmptyValue": false
+        },
+        "foto_selfie": {
+          "type": "string",
+          "description": "person with id",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "CloseAccountPayload",
+      "description": "Close Account Payload"
+    },
+    "Data": {
+      "type": "object",
+      "properties": {
+        "clientid": {
+          "type": "string",
+          "description": "Clientid",
+          "allowEmptyValue": false
+        },
+        "databilling": {
+          "type": "string",
+          "description": "databilling Switching",
+          "allowEmptyValue": false
+        },
+        "debetsaldo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "debetsaldo",
+          "allowEmptyValue": false
+        },
+        "deskripsi": {
+          "type": "string",
+          "description": "deskripsi",
+          "allowEmptyValue": false
+        },
+        "footer": {
+          "type": "string",
+          "description": "footer",
+          "allowEmptyValue": false
+        },
+        "kdproduk": {
+          "type": "string",
+          "description": "Product code Switching",
+          "allowEmptyValue": false
+        },
+        "log": {
+          "type": "string",
+          "description": "log",
+          "allowEmptyValue": false
+        },
+        "nominal": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Nominal",
+          "allowEmptyValue": false
+        },
+        "rc": {
+          "type": "string",
+          "description": "Status Switching",
+          "allowEmptyValue": false
+        },
+        "reffpayment": {
+          "type": "string",
+          "description": "reffpayment",
+          "allowEmptyValue": false
+        },
+        "trxcode": {
+          "type": "string",
+          "description": "Trx Code Switching",
+          "allowEmptyValue": false
+        },
+        "wkttrans": {
+          "type": "string",
+          "description": "wkttrans",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "Data"
+    },
+    "DetailHistoryPayload": {
+      "type": "object",
+      "properties": {
+        "transactionid": {
+          "type": "string",
+          "description": "transactionid",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "DetailHistoryPayload",
+      "description": "DetailHistoryPayload Payload"
+    },
+    "ForgotPassword": {
+      "type": "object",
+      "properties": {
+        "accountid": {
+          "type": "string",
+          "description": "Account id",
+          "allowEmptyValue": false
+        },
+        "ibu": {
+          "type": "string",
+          "description": "user mother maiden name",
+          "allowEmptyValue": false
+        },
+        "kota_lahir": {
+          "type": "string",
+          "description": "user birth city",
+          "allowEmptyValue": false
+        },
+        "tanggal_lahir": {
+          "type": "string",
+          "description": "user birthday",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "ForgotPassword",
+      "description": "Forgot Password"
+    },
+    "ForgotPasswordResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string",
+          "description": "message",
+          "allowEmptyValue": false
+        },
+        "pin": {
+          "type": "string",
+          "description": "Password from wso2",
+          "allowEmptyValue": false
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of process",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "ForgotPasswordResponse",
+      "description": "Respon for Forgot Password "
+    },
+    "GeneralErrorResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string",
+          "description": "Error Message",
+          "allowEmptyValue": false
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of process",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "GeneralErrorResponse",
+      "description": "Respon for most of Error "
+    },
+    "GeneralResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object",
+          "description": "Whatever returned goes in here",
+          "allowEmptyValue": false
+        },
+        "message": {
+          "type": "string",
+          "description": "OK",
+          "allowEmptyValue": false
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of process",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "GeneralResponse",
+      "description": "Respon for most of API "
+    },
+    "GetUserAccountResponse": {
+      "type": "object",
+      "properties": {
+        "accounttype": {
+          "type": "string",
+          "description": "User account type code",
+          "allowEmptyValue": false
+        },
+        "accounttypedesc": {
+          "type": "string",
+          "description": "User account type description",
+          "allowEmptyValue": false
+        },
+        "accounttypelimit": {
+          "type": "string",
+          "description": "User account balance limit",
+          "allowEmptyValue": false
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address",
+          "allowEmptyValue": false
+        },
+        "fullname": {
+          "type": "string",
+          "description": "Name of user",
+          "allowEmptyValue": false
+        },
+        "handphone": {
+          "type": "string",
+          "description": "Username / handphone number of user",
+          "allowEmptyValue": false
+        },
+        "saldo": {
+          "type": "string",
+          "description": "Balance",
+          "allowEmptyValue": false
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of process",
+          "allowEmptyValue": false
+        },
+        "statusupgrade": {
+          "type": "string",
+          "description": "is there any upgrade on going?",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "GetUserAccountResponse",
+      "description": "Respon for get user login"
+    },
+    "HistoryPayload": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "string",
+          "description": "page",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "HistoryPayload",
+      "description": "HistoryPayload Payload"
+    },
+    "JSONObject": {
+      "type": "object",
+      "properties": {
+        "empty": {
+          "type": "boolean"
+        }
+      },
+      "title": "JSONObject"
+    },
+    "LoginPayload": {
+      "type": "object",
+      "properties": {
+        "password": {
+          "type": "string",
+          "description": "user pin/password",
+          "allowEmptyValue": false
+        },
+        "phone": {
+          "type": "string",
+          "description": "user phone number",
+          "allowEmptyValue": false
+        },
+        "vcode": {
+          "type": "string",
+          "description": "device id",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "LoginPayload",
+      "description": "Parameter For Login "
+    },
+    "LoginResponse": {
+      "type": "object",
+      "properties": {
+        "accounttype": {
+          "type": "string",
+          "description": "User account type code",
+          "allowEmptyValue": false
+        },
+        "accounttypedesc": {
+          "type": "string",
+          "description": "User account type description",
+          "allowEmptyValue": false
+        },
+        "accounttypelimit": {
+          "type": "string",
+          "description": "User account balance limit",
+          "allowEmptyValue": false
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address",
+          "allowEmptyValue": false
+        },
+        "first_name": {
+          "type": "string",
+          "description": "Name of user",
+          "allowEmptyValue": false
+        },
+        "id": {
+          "type": "string",
+          "description": "ID user",
+          "allowEmptyValue": false
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of process",
+          "allowEmptyValue": false
+        },
+        "token": {
+          "type": "string",
+          "description": "Secret Token",
+          "allowEmptyValue": false
+        },
+        "username": {
+          "type": "string",
+          "description": "Username / handphone number of user",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "LoginResponse",
+      "description": "Respon for Login"
+    },
+    "PPOBInqPayload": {
+      "type": "object",
+      "properties": {
+        "idpelanggan": {
+          "type": "string",
+          "description": "Customer Number",
+          "allowEmptyValue": false
+        },
+        "kode": {
+          "type": "string",
+          "description": "kode product",
+          "allowEmptyValue": false
+        },
+        "latitude": {
+          "type": "string",
+          "description": "Latitude",
+          "allowEmptyValue": false
+        },
+        "longitude": {
+          "type": "string",
+          "description": "Longitude",
+          "allowEmptyValue": false
+        },
+        "produk_id": {
+          "type": "string",
+          "description": "id product",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "PPOBInqPayload",
+      "description": "Parameter For PPOB Inquiry "
+    },
+    "PPOBInqResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/Data"
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of process",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "PPOBInqResponse",
+      "description": "Respon for PPOB Inquiry"
+    },
+    "PPOBPayPayload": {
+      "type": "object",
+      "properties": {
+        "admin": {
+          "type": "string",
+          "description": "dummy",
+          "allowEmptyValue": false
+        },
+        "amount": {
+          "type": "string",
+          "description": "dummy",
+          "allowEmptyValue": false
+        },
+        "databilling": {
+          "type": "string",
+          "description": "databilling",
+          "allowEmptyValue": false
+        },
+        "idpelanggan": {
+          "type": "string",
+          "description": "Customer Number",
+          "allowEmptyValue": false
+        },
+        "kode": {
+          "type": "string",
+          "description": "kode product",
+          "allowEmptyValue": false
+        },
+        "latitude": {
+          "type": "string",
+          "description": "Latitude",
+          "allowEmptyValue": false
+        },
+        "longitude": {
+          "type": "string",
+          "description": "Longitude",
+          "allowEmptyValue": false
+        },
+        "produk_id": {
+          "type": "string",
+          "description": "id product",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "PPOBPayPayload",
+      "description": "Parameter For PPOB Payment "
+    },
+    "PPOBPayResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/Data"
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of process",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "PPOBPayResponse",
+      "description": "Respon for PPOB Payment"
+    },
+    "ProductPulsaDataPayload": {
+      "type": "object",
+      "properties": {
+        "area": {
+          "type": "string",
+          "description": "area/province",
+          "allowEmptyValue": false
+        },
+        "provider": {
+          "type": "string",
+          "description": "id provider",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "ProductPulsaDataPayload",
+      "description": "Parameter For Product Pulsa & Data "
+    },
+    "RegisterPayload": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": "user email",
+          "allowEmptyValue": false
+        },
+        "fullname": {
+          "type": "string",
+          "description": "user fullname",
+          "allowEmptyValue": false
+        },
+        "handphone": {
+          "type": "string",
+          "description": "user handphone number",
+          "allowEmptyValue": false
+        },
+        "ibu": {
+          "type": "string",
+          "description": "user mother maiden name",
+          "allowEmptyValue": false
+        },
+        "kota_lahir": {
+          "type": "string",
+          "description": "user birth city",
+          "allowEmptyValue": false
+        },
+        "tanggal_lahir": {
+          "type": "string",
+          "description": "user birthday",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "RegisterPayload",
+      "description": "Parameter For Register User "
+    },
+    "SyaratPrivasiResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object",
+          "description": "Whatever returned goes in here",
+          "allowEmptyValue": false
+        },
+        "message": {
+          "type": "string",
+          "description": "OK",
+          "allowEmptyValue": false
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of process",
+          "allowEmptyValue": false
+        },
+        "tanggal": {
+          "type": "string",
+          "description": "Date",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "SyaratPrivasiResponse",
+      "description": "Respon for most of API "
+    },
+    "TataCaraPayload": {
+      "type": "object",
+      "properties": {
+        "is_tipe": {
+          "type": "string",
+          "description": "tipe Tata Cara",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "TataCaraPayload",
+      "description": "Parameter For Tata Cara "
+    },
+    "TelcoPayPayload": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "string",
+          "description": "Latitude",
+          "allowEmptyValue": false
+        },
+        "longitude": {
+          "type": "string",
+          "description": "Longitude",
+          "allowEmptyValue": false
+        },
+        "phone": {
+          "type": "string",
+          "description": "Customer Number",
+          "allowEmptyValue": false
+        },
+        "produk_id": {
+          "type": "string",
+          "description": "id product",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "TelcoPayPayload",
+      "description": "Parameter For Telco Payment "
+    },
+    "TelcoPayResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "description": "Whatever returned goes in here",
+          "allowEmptyValue": false,
+          "$ref": "#/definitions/Data"
+        },
+        "log": {
+          "type": "string",
+          "description": "OK",
+          "allowEmptyValue": false
+        },
+        "saldo": {
+          "type": "number",
+          "format": "double",
+          "description": "Saldo After trans",
+          "allowEmptyValue": false
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of process",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "TelcoPayResponse",
+      "description": "Respon for Telco Payment"
+    },
+    "UpdateDeviceToken": {
+      "type": "object",
+      "properties": {
+        "device_token": {
+          "type": "string",
+          "description": "Device Token",
+          "allowEmptyValue": false
+        },
+        "device_type": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Type of device,0 = android, 1 = IOS ,default = 0",
+          "allowEmptyValue": false
+        },
+        "userid": {
+          "type": "string",
+          "description": "Username / hanphone number",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "UpdateDeviceToken",
+      "description": "Parameter For Changing device token for firebase "
+    },
+    "UpdatePasswordPayload": {
+      "type": "object",
+      "properties": {
+        "newpassword": {
+          "type": "string",
+          "description": "New password",
+          "allowEmptyValue": false
+        },
+        "oldpassword": {
+          "type": "string",
+          "description": "Old password",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "UpdatePasswordPayload",
+      "description": "Update password"
+    },
+    "UploadFileResponse": {
+      "type": "object",
+      "properties": {
+        "link": {
+          "type": "string",
+          "description": "Link to access file",
+          "allowEmptyValue": false
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of process",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "UploadFileResponse",
+      "description": "Respon For Upload File "
+    },
+    "VerifiedPayload": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "user phone number",
+          "allowEmptyValue": false
+        },
+        "vcode": {
+          "type": "string",
+          "description": "device id/OTP",
+          "allowEmptyValue": false
+        },
+        "vnewcode": {
+          "type": "string",
+          "description": "New device id/OTP",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "VerifiedPayload",
+      "description": "Parameter For Verified "
+    }
+  }
+}
