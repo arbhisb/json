@@ -2,7 +2,8 @@
   "swagger": "2.0",
   "info": {
     "description": "RUPI CASH FMCG SWAGGER",
-    "title": "RUPI FMCG REST API"
+    "title": "RUPI FMCG REST API",
+    "version": "1.0.5"
   },
   "host": "apicashdev.rupi.id",
   "basePath": "/",
@@ -596,13 +597,11 @@
       "properties": {
         "driver_id": {
           "type": "string",
-          "description": "driver_id",
-          "allowEmptyValue": false
+          "description": "driver_id"
         },
         "refno": {
           "type": "string",
-          "description": "refno",
-          "allowEmptyValue": false
+          "description": "refno"
         }
       },
       "title": "CallbackAcceptOrderPayload",
@@ -613,18 +612,15 @@
       "properties": {
         "data": {
           "type": "object",
-          "description": "Whatever returned goes in here",
-          "allowEmptyValue": false
+          "description": "Whatever returned goes in here"
         },
         "message": {
           "type": "string",
-          "description": "OK",
-          "allowEmptyValue": false
+          "description": "OK"
         },
         "status": {
           "type": "string",
-          "description": "Status of process",
-          "allowEmptyValue": false
+          "description": "Status of process"
         }
       },
       "title": "GeneralResponse",
@@ -635,26 +631,22 @@
       "properties": {
         "data": {
           "type": "object",
-          "description": "Whatever returned goes in here",
-          "allowEmptyValue": false
+          "description": "Whatever returned goes in here"
         },
         "message": {
           "type": "string",
-          "description": "OK",
-          "allowEmptyValue": false
+          "description": "OK"
         },
         "saved_location": {
           "type": "array",
           "description": "List saved location",
-          "allowEmptyValue": false,
           "items": {
             "$ref": "#/definitions/UserSavedLocation"
           }
         },
         "status": {
           "type": "string",
-          "description": "Status of process",
-          "allowEmptyValue": false
+          "description": "Status of process"
         }
       },
       "title": "GetStoreListOutResponse",
@@ -665,8 +657,7 @@
       "properties": {
         "store_id": {
           "type": "string",
-          "description": "store_id",
-          "allowEmptyValue": false
+          "description": "store_id"
         }
       },
       "title": "GetStoreProductPayload",
@@ -677,8 +668,7 @@
       "properties": {
         "page": {
           "type": "string",
-          "description": "page",
-          "allowEmptyValue": false
+          "description": "page"
         }
       },
       "title": "HistoryPayload",
@@ -690,14 +680,12 @@
         "product_id": {
           "type": "integer",
           "format": "int64",
-          "description": "Product ID",
-          "allowEmptyValue": false
+          "description": "Product ID"
         },
         "quantity": {
           "type": "integer",
           "format": "int32",
-          "description": "quantity",
-          "allowEmptyValue": false
+          "description": "quantity"
         }
       },
       "title": "OrderPayload",
@@ -708,28 +696,23 @@
       "properties": {
         "filter": {
           "type": "string",
-          "description": "filter",
-          "allowEmptyValue": false
+          "description": "filter"
         },
         "latitude": {
           "type": "string",
-          "description": "latitude",
-          "allowEmptyValue": false
+          "description": "latitude"
         },
         "longitude": {
           "type": "string",
-          "description": "longitude",
-          "allowEmptyValue": false
+          "description": "longitude"
         },
         "page": {
           "type": "string",
-          "description": "page",
-          "allowEmptyValue": false
+          "description": "page"
         },
         "sort": {
           "type": "string",
-          "description": "sort",
-          "allowEmptyValue": false
+          "description": "sort"
         }
       },
       "title": "StoreListPayload",
@@ -740,8 +723,7 @@
       "properties": {
         "refno": {
           "type": "string",
-          "description": "refno",
-          "allowEmptyValue": false
+          "description": "refno"
         }
       },
       "title": "TransactionCancelPayload",
@@ -752,31 +734,26 @@
       "properties": {
         "discount_code": {
           "type": "string",
-          "description": "discount_code",
-          "allowEmptyValue": false
+          "description": "discount_code"
         },
         "latitude": {
           "type": "string",
-          "description": "latitude",
-          "allowEmptyValue": false
+          "description": "latitude"
         },
         "longitude": {
           "type": "string",
-          "description": "longitude",
-          "allowEmptyValue": false
+          "description": "longitude"
         },
         "order": {
           "type": "array",
           "description": "order",
-          "allowEmptyValue": false,
           "items": {
             "$ref": "#/definitions/OrderPayload"
           }
         },
         "payment_method": {
           "type": "string",
-          "description": "payment_method (angka)",
-          "allowEmptyValue": false
+          "description": "payment_method (angka)"
         }
       },
       "title": "TransactionPayload",
@@ -787,23 +764,19 @@
       "properties": {
         "latitude": {
           "type": "string",
-          "description": "latitude",
-          "allowEmptyValue": false
+          "description": "latitude"
         },
         "longitude": {
           "type": "string",
-          "description": "longitude",
-          "allowEmptyValue": false
+          "description": "longitude"
         },
         "name": {
           "type": "string",
-          "description": "name",
-          "allowEmptyValue": false
+          "description": "name"
         },
         "note": {
           "type": "string",
-          "description": "note",
-          "allowEmptyValue": false
+          "description": "note"
         }
       },
       "title": "UserSaveLocationPayload"
