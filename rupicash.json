@@ -2479,13 +2479,11 @@
       "properties": {
         "accountid": {
           "type": "string",
-          "description": "Account id",
-          "allowEmptyValue": false
+          "description": "Account id"
         },
         "password": {
           "type": "string",
-          "description": "Password / PIN",
-          "allowEmptyValue": false
+          "description": "Password / PIN"
         }
       },
       "title": "AccountIdPayload",
@@ -2496,30 +2494,25 @@
       "properties": {
         "currency": {
           "type": "string",
-          "description": "balance currency",
-          "allowEmptyValue": false
+          "description": "balance currency"
         },
         "lastupdate": {
           "type": "string",
-          "description": "last update",
-          "allowEmptyValue": false
+          "description": "last update"
         },
         "monthlydebit": {
           "type": "number",
           "format": "double",
-          "description": "Current top up in this month",
-          "allowEmptyValue": false
+          "description": "Current top up in this month"
         },
         "status": {
           "type": "string",
-          "description": "Status of process",
-          "allowEmptyValue": false
+          "description": "Status of process"
         },
         "value": {
           "type": "number",
           "format": "double",
-          "description": "Value / balance",
-          "allowEmptyValue": false
+          "description": "Value / balance"
         }
       },
       "title": "BalanceInfoResponse",
@@ -2530,8 +2523,7 @@
       "properties": {
         "user_type": {
           "type": "string",
-          "description": "user_type / account_type",
-          "allowEmptyValue": false
+          "description": "user_type / account_type"
         }
       },
       "title": "BannerByUserTypePayload",
@@ -2542,28 +2534,23 @@
       "properties": {
         "account_name": {
           "type": "string",
-          "description": "Bank account name",
-          "allowEmptyValue": false
+          "description": "Bank account name"
         },
         "account_no": {
           "type": "string",
-          "description": "Bank account number",
-          "allowEmptyValue": false
+          "description": "Bank account number"
         },
         "alasan": {
           "type": "string",
-          "description": "reason to close account",
-          "allowEmptyValue": false
+          "description": "reason to close account"
         },
         "foto_ktp": {
           "type": "string",
-          "description": "id picture",
-          "allowEmptyValue": false
+          "description": "id picture"
         },
         "foto_selfie": {
           "type": "string",
-          "description": "person with id",
-          "allowEmptyValue": false
+          "description": "person with id"
         }
       },
       "title": "CloseAccountPayload",
@@ -2574,65 +2561,53 @@
       "properties": {
         "clientid": {
           "type": "string",
-          "description": "Clientid",
-          "allowEmptyValue": false
+          "description": "Clientid"
         },
         "databilling": {
           "type": "string",
-          "description": "databilling Switching",
-          "allowEmptyValue": false
+          "description": "databilling Switching"
         },
         "debetsaldo": {
           "type": "integer",
           "format": "int32",
-          "description": "debetsaldo",
-          "allowEmptyValue": false
+          "description": "debetsaldo"
         },
         "deskripsi": {
           "type": "string",
-          "description": "deskripsi",
-          "allowEmptyValue": false
+          "description": "deskripsi"
         },
         "footer": {
           "type": "string",
-          "description": "footer",
-          "allowEmptyValue": false
+          "description": "footer"
         },
         "kdproduk": {
           "type": "string",
-          "description": "Product code Switching",
-          "allowEmptyValue": false
+          "description": "Product code Switching"
         },
         "log": {
           "type": "string",
-          "description": "log",
-          "allowEmptyValue": false
+          "description": "log"
         },
         "nominal": {
           "type": "integer",
           "format": "int32",
-          "description": "Nominal",
-          "allowEmptyValue": false
+          "description": "Nominal"
         },
         "rc": {
           "type": "string",
-          "description": "Status Switching",
-          "allowEmptyValue": false
+          "description": "Status Switching"
         },
         "reffpayment": {
           "type": "string",
-          "description": "reffpayment",
-          "allowEmptyValue": false
+          "description": "reffpayment"
         },
         "trxcode": {
           "type": "string",
-          "description": "Trx Code Switching",
-          "allowEmptyValue": false
+          "description": "Trx Code Switching"
         },
         "wkttrans": {
           "type": "string",
-          "description": "wkttrans",
-          "allowEmptyValue": false
+          "description": "wkttrans"
         }
       },
       "title": "Data"
@@ -2642,8 +2617,7 @@
       "properties": {
         "transactionid": {
           "type": "string",
-          "description": "transactionid",
-          "allowEmptyValue": false
+          "description": "transactionid"
         }
       },
       "title": "DetailHistoryPayload",
@@ -2654,23 +2628,19 @@
       "properties": {
         "accountid": {
           "type": "string",
-          "description": "Account id",
-          "allowEmptyValue": false
+          "description": "Account id"
         },
         "ibu": {
           "type": "string",
-          "description": "user mother maiden name",
-          "allowEmptyValue": false
+          "description": "user mother maiden name"
         },
         "kota_lahir": {
           "type": "string",
-          "description": "user birth city",
-          "allowEmptyValue": false
+          "description": "user birth city"
         },
         "tanggal_lahir": {
           "type": "string",
-          "description": "user birthday",
-          "allowEmptyValue": false
+          "description": "user birthday"
         }
       },
       "title": "ForgotPassword",
@@ -2681,18 +2651,15 @@
       "properties": {
         "message": {
           "type": "string",
-          "description": "message",
-          "allowEmptyValue": false
+          "description": "message"
         },
         "pin": {
           "type": "string",
-          "description": "Password from wso2",
-          "allowEmptyValue": false
+          "description": "Password from wso2"
         },
         "status": {
           "type": "string",
-          "description": "Status of process",
-          "allowEmptyValue": false
+          "description": "Status of process"
         }
       },
       "title": "ForgotPasswordResponse",
@@ -2703,13 +2670,11 @@
       "properties": {
         "message": {
           "type": "string",
-          "description": "Error Message",
-          "allowEmptyValue": false
+          "description": "Error Message"
         },
         "status": {
           "type": "string",
-          "description": "Status of process",
-          "allowEmptyValue": false
+          "description": "Status of process"
         }
       },
       "title": "GeneralErrorResponse",
@@ -2720,18 +2685,15 @@
       "properties": {
         "data": {
           "type": "object",
-          "description": "Whatever returned goes in here",
-          "allowEmptyValue": false
+          "description": "Whatever returned goes in here"
         },
         "message": {
           "type": "string",
-          "description": "OK",
-          "allowEmptyValue": false
+          "description": "OK"
         },
         "status": {
           "type": "string",
-          "description": "Status of process",
-          "allowEmptyValue": false
+          "description": "Status of process"
         }
       },
       "title": "GeneralResponse",
@@ -2742,48 +2704,39 @@
       "properties": {
         "accounttype": {
           "type": "string",
-          "description": "User account type code",
-          "allowEmptyValue": false
+          "description": "User account type code"
         },
         "accounttypedesc": {
           "type": "string",
-          "description": "User account type description",
-          "allowEmptyValue": false
+          "description": "User account type description"
         },
         "accounttypelimit": {
           "type": "string",
-          "description": "User account balance limit",
-          "allowEmptyValue": false
+          "description": "User account balance limit"
         },
         "email": {
           "type": "string",
-          "description": "Email address",
-          "allowEmptyValue": false
+          "description": "Email address"
         },
         "fullname": {
           "type": "string",
-          "description": "Name of user",
-          "allowEmptyValue": false
+          "description": "Name of user"
         },
         "handphone": {
           "type": "string",
-          "description": "Username / handphone number of user",
-          "allowEmptyValue": false
+          "description": "Username / handphone number of user"
         },
         "saldo": {
           "type": "string",
-          "description": "Balance",
-          "allowEmptyValue": false
+          "description": "Balance"
         },
         "status": {
           "type": "string",
-          "description": "Status of process",
-          "allowEmptyValue": false
+          "description": "Status of process"
         },
         "statusupgrade": {
           "type": "string",
-          "description": "is there any upgrade on going?",
-          "allowEmptyValue": false
+          "description": "is there any upgrade on going?"
         }
       },
       "title": "GetUserAccountResponse",
@@ -2794,8 +2747,7 @@
       "properties": {
         "page": {
           "type": "string",
-          "description": "page",
-          "allowEmptyValue": false
+          "description": "page"
         }
       },
       "title": "HistoryPayload",
@@ -2815,18 +2767,15 @@
       "properties": {
         "password": {
           "type": "string",
-          "description": "user pin/password",
-          "allowEmptyValue": false
+          "description": "user pin/password"
         },
         "phone": {
           "type": "string",
-          "description": "user phone number",
-          "allowEmptyValue": false
+          "description": "user phone number"
         },
         "vcode": {
           "type": "string",
-          "description": "device id",
-          "allowEmptyValue": false
+          "description": "device id"
         }
       },
       "title": "LoginPayload",
@@ -2837,48 +2786,39 @@
       "properties": {
         "accounttype": {
           "type": "string",
-          "description": "User account type code",
-          "allowEmptyValue": false
+          "description": "User account type code"
         },
         "accounttypedesc": {
           "type": "string",
-          "description": "User account type description",
-          "allowEmptyValue": false
+          "description": "User account type description"
         },
         "accounttypelimit": {
           "type": "string",
-          "description": "User account balance limit",
-          "allowEmptyValue": false
+          "description": "User account balance limit"
         },
         "email": {
           "type": "string",
-          "description": "Email address",
-          "allowEmptyValue": false
+          "description": "Email address"
         },
         "first_name": {
           "type": "string",
-          "description": "Name of user",
-          "allowEmptyValue": false
+          "description": "Name of user"
         },
         "id": {
           "type": "string",
-          "description": "ID user",
-          "allowEmptyValue": false
+          "description": "ID user"
         },
         "status": {
           "type": "string",
-          "description": "Status of process",
-          "allowEmptyValue": false
+          "description": "Status of process"
         },
         "token": {
           "type": "string",
-          "description": "Secret Token",
-          "allowEmptyValue": false
+          "description": "Secret Token"
         },
         "username": {
           "type": "string",
-          "description": "Username / handphone number of user",
-          "allowEmptyValue": false
+          "description": "Username / handphone number of user"
         }
       },
       "title": "LoginResponse",
@@ -2889,28 +2829,23 @@
       "properties": {
         "idpelanggan": {
           "type": "string",
-          "description": "Customer Number",
-          "allowEmptyValue": false
+          "description": "Customer Number"
         },
         "kode": {
           "type": "string",
-          "description": "kode product",
-          "allowEmptyValue": false
+          "description": "kode product"
         },
         "latitude": {
           "type": "string",
-          "description": "Latitude",
-          "allowEmptyValue": false
+          "description": "Latitude"
         },
         "longitude": {
           "type": "string",
-          "description": "Longitude",
-          "allowEmptyValue": false
+          "description": "Longitude"
         },
         "produk_id": {
           "type": "string",
-          "description": "id product",
-          "allowEmptyValue": false
+          "description": "id product"
         }
       },
       "title": "PPOBInqPayload",
@@ -2924,8 +2859,7 @@
         },
         "status": {
           "type": "string",
-          "description": "Status of process",
-          "allowEmptyValue": false
+          "description": "Status of process"
         }
       },
       "title": "PPOBInqResponse",
@@ -2936,43 +2870,35 @@
       "properties": {
         "admin": {
           "type": "string",
-          "description": "dummy",
-          "allowEmptyValue": false
+          "description": "dummy"
         },
         "amount": {
           "type": "string",
-          "description": "dummy",
-          "allowEmptyValue": false
+          "description": "dummy"
         },
         "databilling": {
           "type": "string",
-          "description": "databilling",
-          "allowEmptyValue": false
+          "description": "databilling"
         },
         "idpelanggan": {
           "type": "string",
-          "description": "Customer Number",
-          "allowEmptyValue": false
+          "description": "Customer Number"
         },
         "kode": {
           "type": "string",
-          "description": "kode product",
-          "allowEmptyValue": false
+          "description": "kode product"
         },
         "latitude": {
           "type": "string",
-          "description": "Latitude",
-          "allowEmptyValue": false
+          "description": "Latitude"
         },
         "longitude": {
           "type": "string",
-          "description": "Longitude",
-          "allowEmptyValue": false
+          "description": "Longitude"
         },
         "produk_id": {
           "type": "string",
-          "description": "id product",
-          "allowEmptyValue": false
+          "description": "id product"
         }
       },
       "title": "PPOBPayPayload",
@@ -2986,8 +2912,7 @@
         },
         "status": {
           "type": "string",
-          "description": "Status of process",
-          "allowEmptyValue": false
+          "description": "Status of process"
         }
       },
       "title": "PPOBPayResponse",
@@ -2998,13 +2923,11 @@
       "properties": {
         "area": {
           "type": "string",
-          "description": "area/province",
-          "allowEmptyValue": false
+          "description": "area/province"
         },
         "provider": {
           "type": "string",
-          "description": "id provider",
-          "allowEmptyValue": false
+          "description": "id provider"
         }
       },
       "title": "ProductPulsaDataPayload",
@@ -3015,33 +2938,27 @@
       "properties": {
         "email": {
           "type": "string",
-          "description": "user email",
-          "allowEmptyValue": false
+          "description": "user email"
         },
         "fullname": {
           "type": "string",
-          "description": "user fullname",
-          "allowEmptyValue": false
+          "description": "user fullname"
         },
         "handphone": {
           "type": "string",
-          "description": "user handphone number",
-          "allowEmptyValue": false
+          "description": "user handphone number"
         },
         "ibu": {
           "type": "string",
-          "description": "user mother maiden name",
-          "allowEmptyValue": false
+          "description": "user mother maiden name"
         },
         "kota_lahir": {
           "type": "string",
-          "description": "user birth city",
-          "allowEmptyValue": false
+          "description": "user birth city"
         },
         "tanggal_lahir": {
           "type": "string",
-          "description": "user birthday",
-          "allowEmptyValue": false
+          "description": "user birthday"
         }
       },
       "title": "RegisterPayload",
@@ -3052,23 +2969,19 @@
       "properties": {
         "data": {
           "type": "object",
-          "description": "Whatever returned goes in here",
-          "allowEmptyValue": false
+          "description": "Whatever returned goes in here"
         },
         "message": {
           "type": "string",
-          "description": "OK",
-          "allowEmptyValue": false
+          "description": "OK"
         },
         "status": {
           "type": "string",
-          "description": "Status of process",
-          "allowEmptyValue": false
+          "description": "Status of process"
         },
         "tanggal": {
           "type": "string",
-          "description": "Date",
-          "allowEmptyValue": false
+          "description": "Date"
         }
       },
       "title": "SyaratPrivasiResponse",
@@ -3079,8 +2992,7 @@
       "properties": {
         "is_tipe": {
           "type": "string",
-          "description": "tipe Tata Cara",
-          "allowEmptyValue": false
+          "description": "tipe Tata Cara"
         }
       },
       "title": "TataCaraPayload",
@@ -3091,23 +3003,19 @@
       "properties": {
         "latitude": {
           "type": "string",
-          "description": "Latitude",
-          "allowEmptyValue": false
+          "description": "Latitude"
         },
         "longitude": {
           "type": "string",
-          "description": "Longitude",
-          "allowEmptyValue": false
+          "description": "Longitude"
         },
         "phone": {
           "type": "string",
-          "description": "Customer Number",
-          "allowEmptyValue": false
+          "description": "Customer Number"
         },
         "produk_id": {
           "type": "string",
-          "description": "id product",
-          "allowEmptyValue": false
+          "description": "id product"
         }
       },
       "title": "TelcoPayPayload",
@@ -3118,24 +3026,20 @@
       "properties": {
         "data": {
           "description": "Whatever returned goes in here",
-          "allowEmptyValue": false,
           "$ref": "#/definitions/Data"
         },
         "log": {
           "type": "string",
-          "description": "OK",
-          "allowEmptyValue": false
+          "description": "OK"
         },
         "saldo": {
           "type": "number",
           "format": "double",
-          "description": "Saldo After trans",
-          "allowEmptyValue": false
+          "description": "Saldo After trans"
         },
         "status": {
           "type": "string",
-          "description": "Status of process",
-          "allowEmptyValue": false
+          "description": "Status of process"
         }
       },
       "title": "TelcoPayResponse",
@@ -3146,19 +3050,16 @@
       "properties": {
         "device_token": {
           "type": "string",
-          "description": "Device Token",
-          "allowEmptyValue": false
+          "description": "Device Token"
         },
         "device_type": {
           "type": "integer",
           "format": "int32",
-          "description": "Type of device,0 = android, 1 = IOS ,default = 0",
-          "allowEmptyValue": false
+          "description": "Type of device,0 = android, 1 = IOS ,default = 0"
         },
         "userid": {
           "type": "string",
-          "description": "Username / hanphone number",
-          "allowEmptyValue": false
+          "description": "Username / hanphone number"
         }
       },
       "title": "UpdateDeviceToken",
@@ -3169,13 +3070,11 @@
       "properties": {
         "newpassword": {
           "type": "string",
-          "description": "New password",
-          "allowEmptyValue": false
+          "description": "New password"
         },
         "oldpassword": {
           "type": "string",
-          "description": "Old password",
-          "allowEmptyValue": false
+          "description": "Old password"
         }
       },
       "title": "UpdatePasswordPayload",
@@ -3186,13 +3085,11 @@
       "properties": {
         "link": {
           "type": "string",
-          "description": "Link to access file",
-          "allowEmptyValue": false
+          "description": "Link to access file"
         },
         "status": {
           "type": "string",
-          "description": "Status of process",
-          "allowEmptyValue": false
+          "description": "Status of process"
         }
       },
       "title": "UploadFileResponse",
@@ -3203,18 +3100,15 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "user phone number",
-          "allowEmptyValue": false
+          "description": "user phone number"
         },
         "vcode": {
           "type": "string",
-          "description": "device id/OTP",
-          "allowEmptyValue": false
+          "description": "device id/OTP"
         },
         "vnewcode": {
           "type": "string",
-          "description": "New device id/OTP",
-          "allowEmptyValue": false
+          "description": "New device id/OTP"
         }
       },
       "title": "VerifiedPayload",
