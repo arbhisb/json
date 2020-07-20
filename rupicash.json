@@ -3,7 +3,7 @@
   "info": {
     "description": "RUPI CASH SWAGGER",
     "title": "RUPI REST API",
-    "version": "1.0.5"
+    "version": "1.0.0"
   },
   "host": "localhost:5005",
   "basePath": "/",
